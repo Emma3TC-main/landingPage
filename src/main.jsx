@@ -1,10 +1,16 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App.jsx';
+import './index.css';
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
+// Asegura que el root esté listo para ocupar toda la pantalla
+const rootElement = document.getElementById('root');
+rootElement.style.minHeight = '100vh';
+rootElement.style.display = 'flex';
+rootElement.style.flexDirection = 'column';
+
+ReactDOM.createRoot(rootElement).render(
+  <React.StrictMode>
     <App />
-  </StrictMode>,
-)
+  </React.StrictMode>
+);
