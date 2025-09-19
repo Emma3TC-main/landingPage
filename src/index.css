@@ -1,68 +1,419 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* 🎬 Video de fondo */
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+.video-background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.4);
 }
 
-body {
-  margin: 0;
+/* 🌐 Contenedor principal */
+.app-container {
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+}
+
+/* 🔝 Navbar */
+.navbar {
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 40px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.navbar .logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #00c8ff;
+  position: absolute;
+  left: 40px;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: white;
   font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  transition: 0.3s;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+.navbar ul li a:hover {
+  color: #00c8ff;
+}
+
+/* 🎯 Hero */
+.title-section {
+  margin-top: 140px;
+  padding: 80px 20px;
+}
+
+.title-section h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: white;
+  font-weight: bold;
+}
+
+/* 🚀 Botón Hero */
+.btn-hero {
+  background: linear-gradient(135deg, #00c8ff, #0077ff);
+  color: white;
+  border: none;
+  padding: 14px 40px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 4px 15px rgba(0, 200, 255, 0.4);
+}
+
+.btn-hero:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #0077ff, #0051ff);
+  box-shadow: 0px 6px 20px rgba(0, 200, 255, 0.6);
+}
+
+/* 🖥️ Tecnologías */
+.tech-section {
+  padding: 100px 20px;
+}
+
+.tech-section h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+  color: white;
+}
+
+.tech-list {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.tech-item {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 25px;
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+}
+
+.tech-item:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.tech-item img {
+  width: 70px;
+  margin-bottom: 15px;
+}
+
+.tech-item div {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* ⭐ Beneficios */
+.benefits-section {
+  padding: 100px 20px;
+}
+
+.benefits-section h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+  color: white;
+}
+
+.benefit-list {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.benefit-item {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 25px;
+  border-radius: 15px;
+  width: 280px;
+  transition: transform 0.3s ease;
+}
+
+.benefit-item:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.benefit-item h3 {
+  margin-bottom: 10px;
+  color: #00c8ff;
+}
+
+.benefit-item p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* 💬 Comentarios */
+.comments-section {
+  padding: 100px 20px;
+}
+
+.comments-section h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+  color: white;
+}
+
+.carousel {
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-inner {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+}
+
+.comment-box {
+  min-width: 100%;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 25px;
+  border-radius: 15px;
+  font-size: 16px;
+  font-style: italic;
+  box-shadow: 0px 4px 15px rgba(0, 200, 255, 0.3);
+  text-align: left;
+}
+
+.comment-user {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.comment-user img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  margin-right: 12px;
+  border: 2px solid #00c8ff;
+}
+
+.comment-user h4 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #00c8ff;
+}
+
+.carousel-controls {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 6px;
+  background: white;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.dot.active {
+  background: #00c8ff;
+}
+
+/* 🏢 Comentarios de empresas */
+.company-comments {
+  padding: 100px 20px;
+}
+
+.company-comments h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+  color: white;
+}
+
+.company-list {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.company-item {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 25px;
+  border-radius: 15px;
+  width: 260px;
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.company-item:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.company-logo {
+  width: 80px;
+  margin-bottom: 15px;
+}
+
+.company-item h3 {
+  color: #00c8ff;
+  margin-bottom: 10px;
+}
+
+.company-item p {
+  font-size: 14px;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+/* 📌 Footer */
+.footer {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 25px;
+  font-size: 14px;
+  margin-top: 50px;
+}
+
+/* 📋 Formulario flotante */
+.form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease-in-out;
+}
+
+.form-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.registration-form {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  padding: 40px;
+  border-radius: 20px;
+  width: 420px;
+  text-align: left;
+  color: white;
+  box-shadow: 0px 8px 25px rgba(0, 200, 255, 0.3);
+  animation: slideIn 0.4s ease;
+  position: relative; /* necesario para el botón cerrar */
+}
+
+.registration-form h2 {
+  margin-bottom: 25px;
+  color: #00c8ff;
+  font-size: 26px;
+  text-align: center;
+}
+
+.registration-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.registration-form input,
+.registration-form select {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  outline: none;
+  font-size: 15px;
+  background: rgba(255, 255, 255, 0.2);
+  color: black; /* texto visible */
+}
+
+.registration-form input::placeholder {
+  color: #ddd;
+}
+
+.registration-form button {
+  background: linear-gradient(135deg, #00c8ff, #0077ff);
+  color: white;
+  border: none;
+  padding: 14px;
+  width: 100%;
+  font-size: 16px;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.registration-form button:hover {
+  background: linear-gradient(135deg, #0077ff, #0051ff);
+  transform: scale(1.02);
+}
+
+/* ❌ Botón cerrar */
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 22px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.close-btn:hover {
+  color: #00c8ff;
+}
+
+/* Animación entrada */
+@keyframes slideIn {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
   }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
