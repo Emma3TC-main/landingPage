@@ -163,14 +163,13 @@ function App() {
             muted
             playsInline
             preload="auto"
-            poster="/images/fondo.jpg" // fallback si el video tarda en cargar
+            poster="/images/fondo.jpg" // fallback si el video tarda
             className="video-background"
           >
             <source
-              src="https://drive.google.com/uc?export=download&id=18JUjnKTCJMVcejQP4vTOm5JPytDmdHrK"
+              src="https://res.cloudinary.com/diuimakvu/video/upload/v1758266266/fondo_mephsw.mp4"
               type="video/mp4"
             />
-            {/* Fallback adicional por si no soporta video */}
             <img src="/images/fondo.jpg" alt="Fondo estático" />
             Tu navegador no soporta videos en HTML5.
           </video>
